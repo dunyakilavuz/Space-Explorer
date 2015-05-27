@@ -21,6 +21,7 @@ public class RocketPhysics : MonoBehaviour
 
 	public bool upperStageTank = false;
 	public bool mainStageTank = true;
+	public bool satelliteStageTank = false;
 	public bool isScriptActive = false;
 	public GameObject MainFlame;
 	public GameObject UpperFlame;
