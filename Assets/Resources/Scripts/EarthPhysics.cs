@@ -13,6 +13,7 @@ public class EarthPhysics : MonoBehaviour {
 	public float gravity;
 	public Rigidbody UpperStage;
 	public Rigidbody MainStage;
+	public Rigidbody SatelliteStage;
 
 	void Start () 
 	{
@@ -35,6 +36,10 @@ public class EarthPhysics : MonoBehaviour {
 		if (MainStage != null)
 		{
 			EarthGravity (MainStage);
+		}
+		if (SatelliteStage != null) 
+		{
+			EarthGravity(SatelliteStage);
 		}
 	}
 

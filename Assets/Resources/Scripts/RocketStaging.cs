@@ -3,14 +3,17 @@ using System.Collections;
 
 public class RocketStaging : MonoBehaviour 
 {
-	bool liftOff_Stage = true;
-	bool upper_Stage = false;
-	bool seperation_Stage = false;
-	bool satelliteDeploy_Stage = false;
+	public bool liftOff_Stage = true;
+	public bool upper_Stage = false;
+	public bool seperation_Stage = false;
+	public bool satelliteDeploy_Stage = false;
 
 	public GameObject Rocket;
+	public GameObject SatelliteStage;
 	public GameObject UpperStage;
 	public GameObject MainStage;
+	public GameObject Fairing;
+	public GameObject Panels;
 	bool sendFalse = false;
 	bool sendTrue = true;
 
@@ -18,6 +21,7 @@ public class RocketStaging : MonoBehaviour
 	{
 		MainStage.SendMessage("isActive",sendTrue);
 		UpperStage.SendMessage("isActive",sendFalse);
+		SatelliteStage.SendMessage ("isActive", sendFalse);
 	}
 
 	void Update ()
@@ -34,26 +38,39 @@ public class RocketStaging : MonoBehaviour
 
 		if (upper_Stage == true) 
 		{
-			if(Input.GetKeyUp(KeyCode.Space))
-			{
-				upper_Stage = false;
-				satelliteDeploy_Stage = true;
-			}
-
 			if(seperation_Stage == true)
 			{
 				seperation_Stage = false;
 				UpperStage.transform.SetParent(Rocket.transform);
 				MainStage.SendMessage("isActive",sendFalse);
+				SatelliteStage.SendMessage ("isActive", sendFalse);
 				UpperStage.SendMessage("isActive",sendTrue);
 				UpperStage.SendMessage("setStage");
 			}
-
+			if(Input.GetKeyDown(KeyCode.Space))
+			{
+				upper_Stage = false;
+				satelliteDeploy_Stage = true;
+				seperation_Stage = true;
+			}
 
 		}
 
 		if (satelliteDeploy_Stage == true) 
 		{
+			if(seperation_Stage == true)
+			{
+				seperation_Stage = false;
+				SatelliteStage.transform.SetParent(Rocket.transform);
+				MainStage.SendMessage("isActive",sendFalse);
+				UpperStage.SendMessage("isActive",sendFalse);
+				SatelliteStage.SendMessage ("isActive", sendTrue);
+			}
+			Destroy(Fairing);
+			if(Input.GetKeyDown(KeyCode.Space))
+			{
+				Panels.SetActive(true);
+			}
 
 		}
 	}

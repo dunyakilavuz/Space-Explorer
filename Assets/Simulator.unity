@@ -126,6 +126,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11449720, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
+      propertyPath: altitudeText
+      value: 
+      objectReference: {fileID: 1435854832}
+    - target: {fileID: 11449720, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
+      propertyPath: throttleText
+      value: 
+      objectReference: {fileID: 399376230}
+    - target: {fileID: 11449720, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
+      propertyPath: speedText
+      value: 
+      objectReference: {fileID: 2060929127}
+    - target: {fileID: 11449720, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
+      propertyPath: fuelText
+      value: 
+      objectReference: {fileID: 1960806245}
     - target: {fileID: 11444564, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
       propertyPath: altitudeText
       value: 
@@ -159,29 +175,9 @@ Prefab:
       value: 
       objectReference: {fileID: 1960806245}
     - target: {fileID: 11446506, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
-      propertyPath: MainFlame
+      propertyPath: Panels
       value: 
-      objectReference: {fileID: 1777953154}
-    - target: {fileID: 11446506, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
-      propertyPath: UpperFlame
-      value: 
-      objectReference: {fileID: 767842791}
-    - target: {fileID: 11444564, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
-      propertyPath: MainFlame
-      value: 
-      objectReference: {fileID: 1777953154}
-    - target: {fileID: 11444564, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
-      propertyPath: UpperFlame
-      value: 
-      objectReference: {fileID: 767842791}
-    - target: {fileID: 11442024, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
-      propertyPath: MainFlame
-      value: 
-      objectReference: {fileID: 1777953154}
-    - target: {fileID: 11442024, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
-      propertyPath: UpperFlame
-      value: 
-      objectReference: {fileID: 767842791}
+      objectReference: {fileID: 759883586}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
   m_IsPrefabParent: 0
@@ -779,6 +775,10 @@ Prefab:
       propertyPath: m_Name
       value: Earth
       objectReference: {fileID: 0}
+    - target: {fileID: 11450854, guid: 139ae76cdc334224f8a3f13387bf8c13, type: 2}
+      propertyPath: SatelliteStage
+      value: 
+      objectReference: {fileID: 1212794157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 139ae76cdc334224f8a3f13387bf8c13, type: 2}
   m_IsPrefabParent: 0
@@ -884,9 +884,9 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 711009171}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &767842791
+--- !u!1 &759883586
 GameObject:
-  m_PrefabParentObject: {fileID: 109680, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
+  m_PrefabParentObject: {fileID: 146220, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
   m_PrefabInternal: {fileID: 57922483}
 --- !u!1 &779671273
 GameObject:
@@ -1348,6 +1348,11 @@ Transform:
   - {fileID: 107434858}
   m_Father: {fileID: 1362062183}
   m_RootOrder: 0
+--- !u!54 &1212794157
+Rigidbody:
+  m_PrefabParentObject: {fileID: 5463182, guid: 87a095bc2c81eeb4e95e757939dd1c1f,
+    type: 2}
+  m_PrefabInternal: {fileID: 57922483}
 --- !u!1 &1325035892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,10 +1905,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2076119404}
   m_RootOrder: 4
---- !u!1 &1777953154
-GameObject:
-  m_PrefabParentObject: {fileID: 154852, guid: 87a095bc2c81eeb4e95e757939dd1c1f, type: 2}
-  m_PrefabInternal: {fileID: 57922483}
 --- !u!1 &1804721813
 GameObject:
   m_ObjectHideFlags: 0
